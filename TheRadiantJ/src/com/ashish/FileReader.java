@@ -16,13 +16,17 @@ public class FileReader {
 		InputStream input = FileReader.class.getResourceAsStream("input.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(input));
 		String s;
-		s = br.readLine();
-		System.out.println(s.charAt(4));
+		while ((s = br.readLine()) != null) {
+		//s = br.readLine();
+		//System.out.println(s.charAt(4));
 		StringTokenizer st = new StringTokenizer(s);
-		while(st.hasMoreTokens())
-		System.out.println(st.nextToken());
-		//s = file.toString();
-		
+		Trie t = new Trie();
+		while(st.hasMoreTokens()){
+			String tkn = st.nextToken();
+			t.addString(tkn, false);	
+			System.out.println("Added new Word : " +tkn);
+		}
+}
 	}
 	
 
