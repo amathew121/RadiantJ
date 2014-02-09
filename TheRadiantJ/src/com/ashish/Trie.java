@@ -26,7 +26,7 @@ public class Trie {
 			if (isRootForm) {
 				root.prf = 1;
 				root.parent.prf = root.parent.prf + root.prf / 128;
-				root.rootform = true;
+				root.isRootform = true;
 			}
 			root.isWord = true;
 			return root;
@@ -84,7 +84,7 @@ public class Trie {
 	public void print(StringBuilder prefix, Trienode node) {
 		prefix.append(node.c);
 		if (node.isWord) {
-			System.out.println(prefix + "\t" + node.prf);
+			System.out.println(prefix + "\t" + node.prf + "\t" + node.count);
 		}
 
 		for (int i = 0; i < 128; i++) {

@@ -4,13 +4,15 @@ public class Trienode {
     char c;
     Trienode parent;
     Trienode childs[] = new Trienode[128];
-    boolean rootform ;
+    boolean isRootform ;
     boolean isWord;
     float prf;
+    int count;
     
     public Trienode(){
     	c='\u0000';
     	parent=null;
-		rootform=false;
+		isRootform=false;
+		count = 0;
 	}
 }
